@@ -1,4 +1,4 @@
 jerek-base
 ==========
 
-A base module for my ZF2 applications containing common code.
+A base module containing common code for my ZF2 applications.
