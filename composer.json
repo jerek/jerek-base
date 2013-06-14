@@ -1,5 +1,23 @@
 {
-	    "name": "jerek/jerek-base",
-			"description": "Base module for Jerek's ZF2 projects",
-			"homepage": "https://github.com/jerek/jerek-base"
+    "name": "jerek/jerek-base",
+    "description": "Base module for Jerek's ZF2 projects",
+    "homepage": "https://github.com/jerek/jerek-base",
+    "require": {
+        "php": ">=5.4",
+        "rwoverdijk/assetmanager": "1.*",
+
+        "doctrine/dbal": "dev-master",
+        "doctrine/common": "dev-master",
+        "doctrine/orm": "dev-master",
+
+        "doctrine/doctrine-module": "dev-master as 0.8",
+        "doctrine/doctrine-orm-module": "dev-master",
+
+        "zendframework/zendframework": ">2.2.0rc1",
+        "zendframework/zend-developer-tools": "0.*",
+
+        "spiffy/spiffy-navigation": "0.*@dev",
+
+        "zf-commons/zfc-twig": "1.*"
+    }
 }
