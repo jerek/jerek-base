@@ -12,5 +12,10 @@
         "spiffy/spiffy-navigation": "0.*@dev",
 
         "zf-commons/zfc-twig": "1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "JerekBase\\": "src/"
+        }
     }
 }
