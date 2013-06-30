@@ -1,0 +1,48 @@
+.default-font {font-family:@font-family-default}
+.heading-font {font-family:@font-family-heading}
+
+body {background:@jf-bodybg @jfi-bodybg;color:@jf-text-normal;.default-font;font-size:@font-size-medium;height:100%;line-height:@line-height-medium;overflow-y:scroll}
+
+h1, h2, h3, h4, h5, h6 {color:@jf-text-loud;.heading-font;line-height:22px;margin:0}
+h1 {border-bottom:1px solid @jf-heading-underline;font-size:19px;font-weight:normal;line-height:21px;margin-bottom:22px;padding-bottom:5px}
+h2 {border-bottom:1px solid @jf-heading-underline;font-size:17px;line-height:21px;margin:26px 0 13px;padding-bottom:3px}
+h3 {font-size:15px;margin:1.5em 0 .5em}
+h4 {}
+h5 {}
+h6 {margin-bottom:22px}
+
+p, ul, ol, dl, dd, blockquote, address, pre {margin-bottom:10px}
+
+p {font-size:inherit}
+
+b, strong {color:@jf-text-loud}
+
+a {color:@jf-link;cursor:default;outline:0;text-decoration:none;
+    &:hover {color:@jf-link-hover}
+    &[href] {cursor:pointer;
+        &:hover {text-decoration:underline}
+    }
+}
+
+table {
+    th, td, caption {border:0;line-height:@line-height-medium;padding:4px 4px 4px 5px}
+}
+
+small, .small {font-size:@font-size-tiny;line-height:@line-height-tiny}
+big, .big, .large {font-size:16px;line-height:1.125}
+
+dfn {border-bottom:1px dotted}
+
+ul {margin:0 0 10px;
+    li {padding:0 0 0 25px}
+}
+ol {list-style-type:decimal !important}
+li {line-height:inherit}
+
+pre, .false-pre {.simplebox;color:@jf-text-semilouder;font-family:'Bitstream Vera Sans Mono','Lucida Console','Courier New',Monaco,Courier,monospace;overflow:auto}
+
+::-moz-selection {background:@jf-selection;color:@jf-text-loud;text-shadow:none}
+::selection {background:@jf-selection;color:@jf-text-loud;text-shadow:none}
+a:link {-webkit-tap-highlight-color:@jf-selection}
+
+hr {border:solid rgba(255,255,255,.1);border-width:1px 0 0;margin:0 0 10px}

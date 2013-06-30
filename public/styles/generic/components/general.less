@@ -1,0 +1,152 @@
+table.clean {border:0;border-spacing:0;padding:0;
+    td {padding:0;vertical-align:top}
+}
+
+.box-misc() {.margin;padding:@box-padding-medium}
+.box {.flatBox;.box-misc}
+.box-bordered {.flatBox;.box-misc}
+.box-flat {.flatBox(@jf-box-bg, 0);.box-misc}
+.box-raised {.raisedBox;.box-misc}
+.box-raised-alt {.raisedBox(@jf-box-border);.box-misc}
+.box-lowered {.loweredBox;.box-misc}
+.box-lowered-alt {.loweredBox(@jf-box-border);.box-misc}
+.box-simple {.flatBox(@jf-box-simple-bg, 1px solid @jf-box-simple-border);.box-misc}
+.box-input {.box-lowered;.borderRadius(6px);.center-align;.center-this;.large-margin;position:relative;width:400px;
+    h1 {border:0;line-height:36px}
+    > :first-child {margin-top:0}
+    form {.margin;
+        label {width:170px}
+        div.input, dd {margin-left:190px !important;.left-align}
+    }
+}
+
+.sidebar-box-header {.box;background:@jf-box-border}
+.sidebar-box-body {.box}
+.sidebar-list {margin-bottom:20px;
+    > header {.sidebar-box-header;.borderRadius-bottom(0);color:@jf-text-loud;font-weight:bold;margin:0;position:relative;
+        .side-link {color:@jf-text-normal;font-size:11px;font-weight:normal;position:absolute;right:10px}
+    }
+    > ul {.sidebar-box-body;.borderRadius-top(0);margin:0;padding:0;
+        li {background:none;border-top:1px solid @jf-box-border;padding:8px 10px; // background:@jf-box-bg;
+            &:first-child {border:0}
+        }
+        &.links {
+            li {border:0;line-height:32px;padding:0;white-space:nowrap;
+                a {border-top:1px solid @jf-box-border;display:block;padding:0 10px;position:relative;
+                    .detail {color:@jf-text-normal;font-size:11px;position:absolute;right:10px}
+                }
+                &:first-child a {border:0}
+            }
+        }
+        // li:nth-child(even) {background:lighten(@jf-box-bg, 3%)}
+    }
+}
+
+.heading-buttons {float:right;position:relative;top:-3px;
+    button {.btn.tiny;.btn.primary;margin:0 0 0 5px}
+}
+.box-info {.loweredBox;color:@jf-text-loud;float:right;margin:0 0 10px 15px;padding:10px 15px;position:relative;
+    h3 {color:@jf-text-loud;font-weight:bold;margin:12px 0 10px;text-align:center;
+        a {color:inherit;text-decoration:none}
+        a:hover {text-decoration:underline}
+    }
+    h3:first-child {margin-top:0}
+    li {color:@jf-text-loud}
+    &.limit-width {max-width:220px}
+    > div:last-child > p:last-child, > p:last-child, > ul:last-child, > ol:last-child {margin-bottom:5px}
+}
+.box-mini {.box-info;.box-simple;font-size:11px;padding:10px}
+.quote {.box-simple;color:@jf-text-semilouder;display:table;padding:10px;
+    > cite:first-child {display:block;font-size:11px;line-height:18px;margin:0 0 10px;
+        a {font-weight:bold}
+        b {color:inherit}
+    }
+    > p:last-child {margin-bottom:0}
+}
+
+// .actions {background:none;.borderRadius(0);border:0;margin:0;padding:0} // Clearing styles on this Bootstrap class.
+
+.text-positive {color:@jf-text-positive}
+.text-negative {color:@jf-text-negative}
+.tip {border-bottom:1px dotted @jf-tip-dotted-underscore;cursor:help}
+
+.text-normal {font:@font-size-medium @font-family-default}
+
+.loading {background:@jf-loading-screen @jfi-loading-large center no-repeat;bottom:0;left:0;position:absolute;right:0;top:0;z-index:50;
+    &.small {background-image:@jfi-loading-small}
+    &.positioned {bottom:auto;height:32px;left:auto;right:auto;top:auto;width:32px;
+        &.small {height:16px;width:16px}
+    }
+    &.checked {background:@jfi-check center no-repeat !important}
+}
+
+// TODO: Update to use button color variables and properly match new button styles
+.fake-button {#gradient > .vertical(#049cdb, #0064cd);border:1px solid darken(#0064cd, 10%);border-bottom-color:darken(#0064cd, 15%);border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);.borderRadius(4px);@shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);.boxShadow(@shadow);color:#fff;display:inline-block;line-height:22px;padding:0 6px 0 6px;text-decoration:none !important;text-shadow: 0 -1px 0 rgba(0,0,0,.25);.transition(.1s linear all);
+    &:hover {background-position:0 -15px;color:#fff}
+    &:active {
+        @shadow2:inset 0 3px 7px rgba(0,0,0,.3), 0 1px 2px rgba(0,0,0,.15);
+        .boxShadow(@shadow2);
+    }
+    &.disabled {#gradient > .vertical(desaturate(#049cdb, 100%), desaturate(#0064cd, 100%));border:1px solid desaturate(darken(#0064cd, 10%), 100%);color:#bbb;cursor:default;text-shadow:0 -1px rgba(0, 0, 0, .35);
+        &:hover {background-position:0}
+        &:active {.boxShadow(@shadow)}
+    }
+    &.active {#gradient > .vertical(darken(#049cdb, 10%), darken(#0064cd, 10%));background-position:0 -15px;
+        @shadow2:inset 0 3px 7px rgba(0,0,0,.3), 0 1px 2px rgba(0,0,0,.15);
+        .boxShadow(@shadow2);
+    }
+}
+.fake-button-left {.borderRadius(4px 0 0 4px);border-color:rgba(0,0,0,.1) darken(#0064cd, 10%) fadein(rgba(0,0,0,.1), 15%) rgba(0,0,0,.1)}
+.fake-button-middle {border-left:0;.borderRadius(0);border-color:rgba(0,0,0,.1) darken(#0064cd, 10%) fadein(rgba(0,0,0,.1), 15%)}
+.fake-button-right {border-left:0;.borderRadius(0 4px 4px 0);border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%) darken(#0064cd, 10%)}
+.fake-button-solo {.borderRadius(4px);border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%)}
+
+.less-error-message {position:relative;z-index:9999999999;
+    h1, h2, h3, h4, h5, h6 {color:#000}
+}
+
+.xdebug-error {color:#000}
+
+/**********************/
+/* Semi-Layout styles */
+/**********************/
+
+.noscript-bg {background-color:#000;height:100%;left:0;opacity:0.8;position:fixed;top:0;width:100%;z-index:999999999}
+.noscript-text {color:#fff;font-size:18px;left:0;line-height:1.5em;position:absolute;text-align:center;top:30%;width:100%;z-index:999999999;
+    b {color:#fff;font-size:22px}
+}
+
+.corner-switcher {font-size:11px;font-weight:bold;left:4px;position:absolute;top:2px;z-index:5}
+
+.warn-ie {background:#ffffe1;border:1px solid #ccccb4;color:#000;font:11px Verdana,Arial,Helvetica,sans-serif;padding:3px 5px;position:absolute;left:170px;top:12px;width:190px;z-index:9999999;
+    b {color:#000}
+    a {color:#03c !important;text-decoration:underline !important}
+}
+
+// Ads
+/*
+.banner-ad {.boxShadow(0 0 10px rgba(0, 0, 0, .5))}
+.header-bg {background:@jfi-ads-whitelist;height:90px;position:absolute;right:-170px;top:10px;width:728px;
+    > div.banner-ad {height:90px;width:728px}
+}
+.block-bg {background:@jfi-ads-whitelist -268px -90px;float:right;height:250px;margin:0 0 10px 10px;width:300px;
+    > div.banner-ad {height:250px;width:300px}
+}
+.sidebar-bg {background:@jfi-ads-whitelist -568px -90px;height:600px;position:absolute;right:0;top:0;width:160px;
+    > div.banner-ad {height:600px;width:160px}
+}
+.footer-bg {background:@jfi-ads-whitelist;height:90px;margin:50px auto 0;width:728px;
+    > div.banner-ad {height:90px;width:728px}
+}
+.dashboard-bg {bottom:0;height:1px;left:0;position:absolute;width:1px;
+    > div.banner-ad {height:1px;width:1px}
+}
+.header-bg, .block-bg, .sidebar-bg, .footer-bg, .dashboard-bg {
+    > div.banner-ad {background:#000;position:absolute}
+}
+body {
+    &.premium, &.expanded {
+        .header-bg, .block-bg, .sidebar-bg, .footer-bg, .dashboard-bg, #expander {display:none !important}
+    }
+}
+*/
