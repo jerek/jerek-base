@@ -1,5 +1,9 @@
 {% extends 'layout/skeleton' %}
 
 {% block body %}
-    Default JerekBase index.
+    <p>Default JerekBase index.</p>
+    <p>{{ "now"|date("F jS, Y") }}<br>
+       {{ "now"|date("g:i:s A") }}<br>
+       {{ "now"|date("e (P)") }}<br>
+       DST: {{ "now"|date("I") }}</p>
 {% endblock %}
