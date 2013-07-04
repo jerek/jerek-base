@@ -23,7 +23,7 @@ class LessFactory implements FactoryInterface
         $config = $serviceLocator->get('Configuration');
         $config = $config['jerekbase'];
 
-        $filter = new LessFilter(__DIR__ . '/../../../../../../../../usr/bin/node', [__DIR__ . '/../../../../../../../../usr/lib/node_modules']);
+        $filter = new LessFilter();
 
         foreach((array) $config['less']['paths'] as $path) {
             $filter->addLoadPath($path);

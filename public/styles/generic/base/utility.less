@@ -110,15 +110,15 @@ table.right-cells {
     background-repeat:repeat-x;
 }
 
-.raisedBox(@background: @jf-box-bg, @borderRadius: @jf-box-border-radius, @shadow: @jfs-shadow-set) {
+.raisedBox(@background: @jf-box-bg, @borderRadius: @box-border-radius, @shadow: @jfs-shadow-set) {
     .gradientBackground(@background, @background + #111);.borderRadius(@borderRadius);.boxShadow(@shadow);
 }
 
-.loweredBox(@background: @jf-box-bg, @borderRadius: @jf-box-border-radius, @shadow: @jfs-shadow-set-reverse) {
+.loweredBox(@background: @jf-box-bg, @borderRadius: @box-border-radius, @shadow: @jfs-shadow-set-reverse) {
     .gradientBackground(@background, @background + #0c0c0c);.borderRadius(@borderRadius);.boxShadow(@shadow);
 }
 
-.flatBox(@background: @jf-box-bg, @border: 2px solid @jf-box-border, @borderRadius: @jf-box-border-radius) {
+.flatBox(@background: @jf-box-bg, @border: 2px solid @jf-box-border, @borderRadius: @box-border-radius) {
     background:@background;border:@border;.borderRadius(@borderRadius);
 }
 
@@ -126,7 +126,7 @@ table.right-cells {
     background:@background;border:@border;
 }
 
-.flatBox-withShadow(@background: @jf-box-bg, @border: 2px solid @jf-box-border, @borderRadius: @jf-box-border-radius, @shadow: none) {
+.flatBox-withShadow(@background: @jf-box-bg, @border: 2px solid @jf-box-border, @borderRadius: @box-border-radius, @shadow: none) {
     background:@background;border:@border;.borderRadius(@borderRadius);.boxShadow(@shadow);
 }
 
