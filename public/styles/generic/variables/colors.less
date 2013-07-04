@@ -44,12 +44,16 @@
 @jf-button-background-highlight:           darken(#fff, 10%);
 @jf-button-border:                         #ccc;
 
-// Default Bootstrap primary button colors
-// @jf-button-primary-background:             #08c;
-// @jf-button-primary-background-highlight:   spin(@jf-button-primary-background, 20%);
+// Wowhead-like Bootstrap primary button colors
+// @jf-button-primary-background:             desaturate(#d00, 25%);
+// @jf-button-primary-background-highlight:   darken(@jf-button-primary-background, 20%);
 
-@jf-button-primary-background:             desaturate(#d00, 25%); // Bootstrap recommends using the link color here. (Not sure if we'll ever do that though.)
+// Base on link color:
+@jf-button-primary-background:             @jf-link;
 @jf-button-primary-background-highlight:   darken(@jf-button-primary-background, 20%);
+// Default Bootstrap colors:
+@jf-button-primary-background:             #08c;
+@jf-button-primary-background-highlight:   spin(@jf-button-primary-background, 20%);
 
 @jf-button-info-background:                #5bc0de;
 @jf-button-info-background-highlight:      #2f96b4;
