@@ -69,9 +69,26 @@ return [
         ],
     ],
 
-    'view_manager' => [
-        'template_path_stack' => [
-            'jerek-base' => __DIR__ . '/../view',
+    'service_manager' => [
+        'abstract_factories' => [
+            'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
+            'Zend\Log\LoggerAbstractServiceFactory',
+        ],
+    ],
+
+    'doctrine' => [
+        'driver' => [
+            'application_entities' => [
+                'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => [__DIR__ . '/../src/Application/Entity'],
+            ],
+
+            'orm_default' => [
+                'drivers' => [
+                    'Application\Entity' => 'application_entities',
+                ],
+            ],
         ],
     ],
 
@@ -91,6 +108,10 @@ return [
             'layout/layout'                      => __DIR__ . '/../view/layout/layout.twig',
 
             'jerek-base/index/index'               => __DIR__ . '/../view/index/index.twig'
+        ],
+
+        'template_path_stack' => [
+            'jerek-base' => __DIR__ . '/../view',
         ],
 
         'strategies' => [
