@@ -11,7 +11,14 @@ h4 {}
 h5 {}
 h6 {margin-bottom:22px}
 
-p, ul, ol, dl, dd, blockquote, address, pre {margin-bottom:10px}
+main {
+    p, ul, ol, dl, dd, blockquote, address, pre {margin-bottom:10px}
+    ul {margin:0 0 10px;
+        li {padding:0 0 0 25px}
+    }
+    ol {list-style-type:decimal !important}
+    li {line-height:inherit}
+}
 
 p {font-size:inherit}
 
@@ -32,12 +39,6 @@ small, .small {font-size:@font-size-tiny;line-height:@line-height-tiny}
 big, .big, .large {font-size:16px;line-height:1.125}
 
 dfn {border-bottom:1px dotted}
-
-ul {margin:0 0 10px;
-    li {padding:0 0 0 25px}
-}
-ol {list-style-type:decimal !important}
-li {line-height:inherit}
 
 pre, .false-pre {.box-simple;color:@jf-text-semilouder;font-family:'Bitstream Vera Sans Mono','Lucida Console','Courier New',Monaco,Courier,monospace;overflow:auto}
 

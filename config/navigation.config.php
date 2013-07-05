@@ -11,14 +11,5 @@ return [
                 ],
             ],
         ],
-        'user' => [
-            [
-                'name' => 'login',
-                'options' => [
-                    'label' => 'Login',
-                    'route' => 'zfcuser/login'
-                ],
-            ],
-        ],
     ],
 ];

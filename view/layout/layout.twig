@@ -12,18 +12,22 @@
                     <span class="icon-bar"></span>
                 </a>
 
-                <a class="brand" href="#">{{ config().title }}</a>
+                <a class="brand" href="{{ url('home') }}">{{ config().title }}</a>
 
                 <div class="nav-collapse collapse">
                     {{ navigationMenu().renderPartial('default', 'navigation/menu')|raw }}
+                </div>
+
+                <div class="nav-collapse collapse pull-right">
+                    {{ navigationMenu().renderPartial(zfcUserIdentity() ? 'user' : 'login', 'navigation/menu')|raw }}
                 </div>
 
             </div>
         </div>
     </div>
 
-    <div class="wrapper">
+    <main class="wrapper">
         {% block content %}{{ content|raw }}{% endblock content %}
-    </div>
+    </main>
 
 {% endblock %}
