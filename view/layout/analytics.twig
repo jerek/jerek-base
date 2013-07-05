@@ -1,0 +1,17 @@
+<script>
+var _gaq=[
+    {%- spaceless %}
+    {% if config().googleAnalyticsId %}
+        ["_setAccount","{{ config().googleAnalyticsId }}"],["_setDomainName",".{{ config().domain }}"],["_trackPageview"]
+        {%- if config().globalGoogleAnalyticsId -%}
+            ,['b._setAccount','{{ config().globalGoogleAnalyticsId }}'],['b._setDomainName','.{{ config().domain }}'],['b._setAllowLinker',true],['b._trackPageview']
+        {% endif %}
+    {% elseif config().globalGoogleAnalyticsId %}
+        ['_setAccount','{{ config().globalGoogleAnalyticsId }}'],['_setDomainName','.{{ config().domain }}'],['_setAllowLinker',true],['_trackPageview']
+    {% endif %}
+    {% endspaceless -%}
+];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.src='//www.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
