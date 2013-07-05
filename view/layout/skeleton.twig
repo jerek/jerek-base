@@ -1,13 +1,19 @@
+{% spaceless %}
 <!DOCTYPE html>
 <html class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{% block title %}JerekBase{% endblock %}</title>
+    <title>{% block title %}{{ config().title }}{% endblock %}</title>
 
     <meta name="viewport" content="width=device-width">
-    {# <meta name="description" content=""> #}
-    {# {% block meta %}{{ headMeta() }}{% endblock meta %} #}
+    {% if config().description %}
+        <meta name="description" content="{{ config().description }}">
+    {% endif %}
+    {% if config().keywords %}
+        <meta name="keywords" content="{{ config().keywords }}">
+    {% endif %}
+    {% block meta %}{{ headMeta() }}{% endblock meta %}
 
     <link href="/styles/style.min.css" media="screen" rel="stylesheet" type="text/css">
     {% block style %}{% endblock style %}
@@ -17,23 +23,12 @@
     {% block script %}{% endblock script %}
 </head>
 <body>
+{% endspaceless %}
 
 {% block body %}{{ body|raw }}{% endblock body %}
 
-<script>
-var _gaq=[
-    {%- spaceless %}
-    {% if config().googleAnalyticsId %}
-        ["_setAccount","{{ config().googleAnalyticsId }}"],["_setDomainName",".{{ config().domain }}"],["_trackPageview"],
-        ['b._setAccount','UA-448886-11'],['b._setDomainName','.{{ config().domain }}'],['b._setAllowLinker',true],['b._trackPageview']
-    {% else %}
-        ['_setAccount','UA-448886-11'],['_setDomainName','.{{ config().domain }}'],['_setAllowLinker',true],['_trackPageview']
-    {% endif %}
-    {% endspaceless -%}
-];
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-g.src='//www.google-analytics.com/ga.js';
-s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
+{% spaceless %}
+{% include 'layout/analytics' %}
 </body>
 </html>
+{% endspaceless %}

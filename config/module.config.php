@@ -1,5 +1,12 @@
 <?php
 return [
+    'application' => [
+        'configuration' => [
+            'title'                   => 'Jerek Core',
+            'globalGoogleAnalyticsId' => 'UA-448886-11',
+        ],
+    ],
+
     'asset_manager' => [
         'caching' => [
             'default' => [
@@ -79,15 +86,9 @@ return [
             'error/404'                          => __DIR__ . '/../view/error/404.phtml',
             'error/index'                        => __DIR__ . '/../view/error/index.phtml',
 
-
             'layout/skeleton'                    => __DIR__ . '/../view/layout/skeleton.twig',
-            'layout/body-classes'                => __DIR__ . '/../view/layout/body-classes.twig',
             'layout/analytics'                   => __DIR__ . '/../view/layout/analytics.twig',
             'layout/layout'                      => __DIR__ . '/../view/layout/layout.twig',
-            'layout/home'                        => __DIR__ . '/../view/layout/home.twig',
-            'layout/footer-simple'               => __DIR__ . '/../view/layout/footer-simple.twig',
-            'layout/footer-large'                => __DIR__ . '/../view/layout/footer-large.twig',
-            'layout/sidebar'                     => __DIR__ . '/../view/layout/sidebar.twig',
 
             'jerek-base/index/index'               => __DIR__ . '/../view/index/index.twig'
         ],
