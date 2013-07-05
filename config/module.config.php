@@ -91,6 +91,8 @@ return [
         ],
     ],
 
+    'spiffy_navigation' => include __DIR__ . '/navigation.config.php',
+
     'view_manager' => [
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
@@ -99,14 +101,18 @@ return [
         'exception_template'       => 'error/index',
 
         'template_map' => [
-            'error/404'                          => __DIR__ . '/../view/error/404.phtml',
-            'error/index'                        => __DIR__ . '/../view/error/index.phtml',
+            'error/404'              => __DIR__ . '/../view/error/404.phtml',
+            'error/index'            => __DIR__ . '/../view/error/index.phtml',
 
-            'layout/skeleton'                    => __DIR__ . '/../view/layout/skeleton.twig',
-            'layout/analytics'                   => __DIR__ . '/../view/layout/analytics.twig',
-            'layout/layout'                      => __DIR__ . '/../view/layout/layout.twig',
+            'layout/skeleton'        => __DIR__ . '/../view/layout/skeleton.twig',
+            'layout/analytics'       => __DIR__ . '/../view/layout/analytics.twig',
+            'layout/layout'          => __DIR__ . '/../view/layout/layout.twig',
 
-            'jerek-base/index/index'               => __DIR__ . '/../view/index/index.twig'
+            'jerek-base/index/index' => __DIR__ . '/../view/index/index.twig',
+
+            'navigation/menu'        => __DIR__ . '/../view/navigation/menu.twig',
+
+            'html/attrib'            => __DIR__ . '/../view/html/attrib.twig',
         ],
 
         'template_path_stack' => [

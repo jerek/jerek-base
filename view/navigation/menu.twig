@@ -1,0 +1,42 @@
+{% spaceless %}
+
+    {% macro menuTier(navigation, container, dropdown) %}
+
+        <ul class="{{ dropdown ? 'dropdown-menu' : 'nav' }}">
+            {% for page in container %}
+                {% import _self as this %}
+
+                {% if navigation.isAllowed(page) %}
+                    {% set class = page.getAttributes().class|split(' ') %}
+
+                    {% if page.isActive() %}
+                        {% set class = class|merge(['active']) %}
+                    {% endif %}
+
+                    {% if page.hasChildren() %}
+                        {% set class = class|merge(['dropdown']) %}
+                    {% endif %}
+
+                    <li{% include 'html/attrib' with { attributes: page.getAttributes()|merge({class:class}) } %}>
+                        <a href="{{ navigation.getHref(page)|default("javascript:;") }}"
+                                {%- if page.hasChildren() %} class="dropdown-toggle" data-toggle="dropdown"{% endif -%}
+                                >
+                            {{- page.getProperty('label') -}}
+                            {%- if page.hasChildren() -%}<b class="caret"></b>{%- endif -%}
+                        </a>
+
+                        {% if page.hasChildren() %}
+                            {{ this.menuTier(navigation, page, true) }}
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+    {% endmacro %}
+
+    {% import _self as this %}
+
+    {{ this.menuTier(navigation, container) }}
+
+{% endspaceless %}

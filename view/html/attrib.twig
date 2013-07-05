@@ -1,0 +1,14 @@
+{% if attributes %}
+{% set output = [] %}
+{% spaceless %}
+
+    {% for name, value in attributes %}
+        {% if value[0] is not defined %}
+            {% set output = output|merge([' ' ~ name ~ '="' ~ value ~ '"']) %}
+        {% elseif value|join(' ') is not sameas('') %}
+            {% set output = output|merge([' ' ~ name ~ '="' ~ value|join(' ') ~ '"']) %}
+        {% endif %}
+    {% endfor %}
+
+{% endspaceless %}
+{{ output|join(' ')|raw }}{% endif %}
