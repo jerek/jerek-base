@@ -24,7 +24,7 @@
     {% if config().jsDebug %}<script>JF.setDebug(true);</script>{% endif %}
     {% block script %}{% endblock script %}
 </head>
-<body>
+<body{% include 'layout/body-classes' %}>
 {% endspaceless %}
 
 {% block body %}{{ body|raw }}{% endblock body %}

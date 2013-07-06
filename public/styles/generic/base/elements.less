@@ -1,15 +1,16 @@
 .default-font {font-family:@font-family-default}
 .heading-font {font-family:@font-family-heading}
+.fixedwidth-font {font-family:@font-family-fixedwidth}
 
-body {background:@jf-bodybg @jfi-bodybg;color:@jf-text-normal;.default-font;font-size:@font-size-medium;height:100%;line-height:@line-height-medium;overflow-y:scroll}
+body {background:@jf-bodybg @jfi-bodybg;color:@jf-text-normal;.default-font;font-size:@font-size-medium;height:100%;line-height:@line-height-medium}
 
-h1, h2, h3, h4, h5, h6 {color:@jf-text-loud;.heading-font;line-height:22px;margin:0}
-h1 {border-bottom:1px solid @jf-heading-underline;font-size:19px;font-weight:normal;line-height:21px;margin-bottom:22px;padding-bottom:5px}
-h2 {border-bottom:1px solid @jf-heading-underline;font-size:17px;line-height:21px;margin:26px 0 13px;padding-bottom:3px}
-h3 {font-size:15px;margin:1.5em 0 .5em}
-h4 {}
-h5 {}
-h6 {margin-bottom:22px}
+h1, h2, h3, h4, h5, h6 {color:@jf-text-loud;font-weight:normal;.heading-font;line-height:1.5em;margin:0 0 10px}
+h1 {font-size:24px}
+h2 {font-size:21px}
+h3 {font-size:19px}
+h4 {font-size:16px;font-weight:bold}
+h5 {font-size:15px;font-weight:bold}
+h6 {font-size:14px;font-weight:bold}
 
 main {
     p, ul, ol, dl, dd, blockquote, address, pre {margin-bottom:10px}
@@ -40,7 +41,7 @@ big, .big, .large {font-size:16px;line-height:1.125}
 
 dfn {border-bottom:1px dotted}
 
-pre, .false-pre {.box-simple;color:@jf-text-semilouder;font-family:'Bitstream Vera Sans Mono','Lucida Console','Courier New',Monaco,Courier,monospace;overflow:auto}
+pre, .false-pre {.box-simple;color:@jf-text-semilouder;.fixedwidth-font;overflow:auto}
 
 ::-moz-selection {background:@jf-selection;color:@jf-text-loud;text-shadow:none}
 ::selection {background:@jf-selection;color:@jf-text-loud;text-shadow:none}

@@ -1,0 +1,17 @@
+{% extends 'layout/skeleton' %}
+
+{% if bodyClasses %}
+    {% set bodyClasses = bodyClasses|merge(['layout-fill']) %}
+{% else %}
+    {% set bodyClasses = ['layout-fill'] %}
+{% endif %}
+
+{% block body %}
+
+    {% include 'layout/menu' %}
+
+    <main class="fill-wrapper">
+        {% block content %}{{ content|raw }}{% endblock content %}
+    </main>
+
+{% endblock %}

@@ -35,6 +35,7 @@ return [
 
                     // Mine
                     'scripts/generic/base.js',
+                    'scripts/generic/zend.js',
                 ],
             ],
 
@@ -104,9 +105,13 @@ return [
             'error/404'              => __DIR__ . '/../view/error/404.phtml',
             'error/index'            => __DIR__ . '/../view/error/index.phtml',
 
-            'layout/skeleton'        => __DIR__ . '/../view/layout/skeleton.twig',
-            'layout/analytics'       => __DIR__ . '/../view/layout/analytics.twig',
             'layout/layout'          => __DIR__ . '/../view/layout/layout.twig',
+            'layout/fill'            => __DIR__ . '/../view/layout/fill.twig',
+
+            'layout/skeleton'        => __DIR__ . '/../view/layout/skeleton.twig',
+            'layout/body-classes'    => __DIR__ . '/../view/layout/body-classes.twig',
+            'layout/menu'            => __DIR__ . '/../view/layout/menu.twig',
+            'layout/analytics'       => __DIR__ . '/../view/layout/analytics.twig',
 
             'jerek-base/index/index' => __DIR__ . '/../view/index/index.twig',
 

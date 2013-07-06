@@ -1,0 +1,4 @@
+{% spaceless %}
+    {% set classes = bodyClasses|default([]) %}
+{% endspaceless %}
+{%- if classes|length > 0 %} class="{{ classes|join(' ') }}"{% endif -%}

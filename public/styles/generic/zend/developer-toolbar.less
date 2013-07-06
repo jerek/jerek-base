@@ -1,0 +1,11 @@
+#zend-developer-toolbar {
+    &.hidden {opacity:0.001;
+        &:hover {opacity:1}
+    }
+    &.top {border-bottom:1px solid #111;border-top:0;bottom:auto;top:0;
+        &.offset {top:43px}
+        .zdt-toolbar-detail {.borderRadius(0 0 5px 5px);bottom:auto;top:40px;
+            &:before, &:after {border-bottom:10px solid #68b604;border-top:0;bottom:auto;top:-10px}
+        }
+    }
+}

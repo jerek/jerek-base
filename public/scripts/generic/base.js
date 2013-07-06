@@ -9,6 +9,20 @@ var JF = new function() {
     this.MENUMOUSELEAVEDELAY = 333;
     this.DEBUG = false;
 
+    this.urlPieces = function(url) {
+        var match = url.match(/(https?):\/\/([^\/]+)\/(.*)/);
+
+        if (match) {
+            return {
+                type: match[1],
+                domain: match[2],
+                path: match[3]
+            };
+        }
+
+        return false;
+    }
+
     this.boxDim = function(x, y, width, height) { // Return an object with box offsets on all sides from top and left.
         return {
             l: x,
