@@ -6,6 +6,10 @@ JF.zend.toolbar = new function() {
         return $('#zend-developer-toolbar');
     };
 
+    this.remove = function() {
+        (this.get()).remove();
+    };
+
     this.fetch = function() {
         this.$toolbar = this.get();
     };

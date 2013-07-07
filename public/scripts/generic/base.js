@@ -9,6 +9,10 @@ var JF = new function() {
     this.MENUMOUSELEAVEDELAY = 333;
     this.DEBUG = false;
 
+    this.dateIsToday = function(datetime) {
+        return (date('Y-n-j', strtotime(datetime)) == date('Y-n-j', strtotime('now')));
+    };
+
     this.urlPieces = function(url) {
         var match = url.match(/(https?):\/\/([^\/]+)\/(.*)/);
 

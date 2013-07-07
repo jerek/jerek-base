@@ -32,9 +32,12 @@ return [
                     'scripts/vendor/jquery/jquery-2.0.2.min.js',
                     'scripts/vendor/jquery/jquery-ui-1.10.3.custom.ui-lightness.min.js',
                     'scripts/vendor/bootstrap/bootstrap.min.js',
+                    'scripts/vendor/phpjs/date.js',
+                    'scripts/vendor/phpjs/strtotime.js',
 
                     // Mine
                     'scripts/generic/base.js',
+                    'scripts/generic/unixtime.js',
                     'scripts/generic/zend.js',
                 ],
             ],
